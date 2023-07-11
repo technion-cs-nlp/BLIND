@@ -58,3 +58,35 @@ To run with DFL loss (with demographics):
 
 ``python train.py --model bert-base-uncased --data raw --seed 0 --dfl_gamma 16 --temp 1 --no_group_labels ``
 
+### Testing
+
+Example for testing a BLIND mode:
+
+``python test.py --model bert-base-uncased --data raw --seed 0 --dfl_gamma 16 --temp 1 --no_group_labels --split test``
+
+## Moji (sentiment classification)
+
+### Dataset
+You'll need to first get the dataset from [ELazar and Goldberg](https://github.com/yanaiela/demog-text-removal/blob/master/src/data/README.md) and have it at ``../data/moji/sentiment_race/``, for instance: ``../data/moji/sentiment_race/neg_neg``.
+
+Change dir to "moji" to run the following scripts.
+
+### Training
+
+#### A. extract tokens
+
+To finetune, you will first need to extract tokens to a file, for example:
+
+``python extract_tokens.py --model bert-base-uncased``
+
+#### B. running the training script
+
+Example for running BLIND:
+
+``python train.py --model bert-base-uncased --data raw --seed 0 --dfl_gamma 16 --temp 1 --no_group_labels ``
+
+### Testing
+
+Example for testing a BLIND mode:
+
+``python test.py --model bert-base-uncased --data raw --seed 0 --dfl_gamma 16 --temp 1 --no_group_labels --split test``
